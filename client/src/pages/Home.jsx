@@ -29,7 +29,7 @@ export default function Home() {
       try {
         const provider = new InfuraProvider(
           "sepolia",
-          "2255adb3331a49a2b6d8700ff710b6ea"
+          process.env.REACT_APP_INFURA_API_KEY
         );
         const balance = await provider.getBalance(walletAddress);
         setBalance(formatEther(balance));
