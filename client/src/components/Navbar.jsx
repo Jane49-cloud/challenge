@@ -19,19 +19,35 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{justifyContent: "space-between"}}>
-          <div style={{height: "40px"}}>
-            <NavLink className={'nav-link'} to={'/'} style={{height: "100%"}}>
-              <img src="/logo.svg" style={{height: "100%"}} alt="logo" />
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+          style={{ justifyContent: "space-between" }}
+        >
+          <div style={{ height: "40px" }}>
+            <NavLink className={"nav-link"} to={"/"} style={{ height: "100%" }}>
+              <img src="/logo.svg" style={{ height: "100%" }} alt="logo" />
             </NavLink>
           </div>
-          <ul className='navbar-nav mb-2 mb-lg-0'>
+          <ul className="navbar-nav mb-2 mb-lg-0">
             {isLoggedIn ? (
-              <li className='nav-item'><NavLink className={'nav-link'} to={'/auth/user'}>User</NavLink></li>
+              <li className="nav-item">
+                <NavLink className={"nav-link"} to={"/auth/user"}>
+                  User
+                </NavLink>
+              </li>
             ) : (
               <>
-                <li className='nav-item'><NavLink className={'nav-link'} to={'/auth/login'}>Login</NavLink></li>
-                <li className='nav-item'><NavLink className={'nav-link'} to={'/auth/register'}>Register</NavLink></li>
+                <li className="nav-item">
+                  <NavLink className={"nav-link"} to={"/auth/login"}>
+                    Login
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className={"nav-link"} to={"/auth/register"}>
+                    Register
+                  </NavLink>
+                </li>
               </>
             )}
           </ul>

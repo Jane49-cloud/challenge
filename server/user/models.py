@@ -49,6 +49,7 @@ class User(AbstractBaseUser):
     is_superuser = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    ethereum_wallet = models.CharField(max_length=42, blank=True, null=True, unique=True)
 
     objects = UserManager()
 

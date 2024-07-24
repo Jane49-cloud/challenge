@@ -9,7 +9,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ("first_name", "last_name", "email", "password", "password2")
+        fields = ("first_name", "last_name", "email", "password", "password2", "ethereum_wallet")
         extra_kwargs = {
             "password": {"write_only": True},
             "password2": {"write_only": True}
@@ -44,4 +44,4 @@ class LoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ("id", "email", "is_staff", "first_name", "last_name")
+        fields = ("id", "email", "is_staff", "first_name", "last_name" , "ethereum_wallet")
